@@ -1,5 +1,5 @@
 #! user/bin/env python
 
-from src.game import game
+from src.game import Game
 
 prjtJogoDaVelha = Game()
