@@ -2,4 +2,4 @@
 
 from src.game import game
 
-prjtJogoDaVelha = Gam()
+prjtJogoDaVelha = Game()
