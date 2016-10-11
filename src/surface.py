@@ -34,12 +34,10 @@ class Surface:
         # game loop
         while True:
             self.catch_events()
-            font_40 = pygame.font.Font(resources.FONT, 40)
             font_60 = pygame.font.Font(resources.FONT, 60)
-            font_20 = pygame.font.Font(resources.FONT, 20)
 
             timer = time.localtime(time.time())
-            time_render = font_60.render("%s:%s" % (timer[3], timer[4]), 0, (187,0,0))
+            time_render = font_60.render("%s:%s" % (timer[3], timer[4]), 1, (187,0,0))
 
             if self.is_running():
                 self.screen.blit(pygame.image.load(resources.BACKGROUND), (0, 0))
