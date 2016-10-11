@@ -12,9 +12,10 @@ DEFAULT_BG_COLOR = WHITE
 
 # Image paths
 GRAPHICS_PATH = "resources" + os.sep + "images" + os.sep
+BACKGROUND = GRAPHICS_PATH + "background.jpg"
 
 # Font
-FONT = FONT_DEFAULT = "resouces" + os.sep + "fronts" + os.sep + "Quicksand-Light.otf"
+FONT = "resouces" + os.sep + "fronts" + os.sep + "Quicksand-Light.otf"
 
 # display settings
 CAPTION = "prjtJogoDaVelha"

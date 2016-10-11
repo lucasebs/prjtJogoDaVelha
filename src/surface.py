@@ -42,7 +42,7 @@ class Surface:
             time_render = font_60.render("%s:%s" % (timer[3], timer[4]), 0, (187,0,0))
 
             if self.is_running():
-                self.screen.blit(pygame.image.load(resources.BACKGROUND_STAGE1), (0, 0))
+                self.screen.blit(pygame.image.load(resources.BACKGROUND), (0, 0))
                 self.screen.blit(time_render, (760, 5))
 
 
