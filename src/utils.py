@@ -18,6 +18,12 @@ def read(local, default=''):
     return data
 
 
+def move(rect, coord):
+    position = (rect[0] + coord[0], rect[1] + coord[1], rect[2], rect[3])
+
+    return position
+
+
 class switch:
     def __init__(self, state=0):
         self.state = state

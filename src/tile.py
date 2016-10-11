@@ -28,4 +28,4 @@ class Tile:
         self.rect = pygame.Rect(rect)
 
     def get_surface(self):
-        return self.image]
+        return self.image
