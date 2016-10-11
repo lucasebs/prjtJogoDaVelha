@@ -55,8 +55,13 @@ class Surface:
             if event.type == pygame.QUIT:
                 self.quit()
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
-                    self.flip.to(resources.MAIN_MENU)
+                if event.key == pygame.K_ESCAPE :
+                    if (resources.MAIN_MENU):
+                        self.quit()
+                    else:
+                        self.flip.to(resources.MAIN_MENU)
+
+
             if event.type == pygame.MOUSEBUTTONDOWN:
                 self.handle_mouse()
 
@@ -69,6 +74,9 @@ class Surface:
         elif self.menu.credits.onclick():
             self.flip.to(resources.CREDITS)
             self.menu.credits.release()
+
+        elif self.menu.back.onclick():
+            self.flip.to(resources.MAIN_MENU)
 
         elif self.menu.exit.onclick():
             self.quit()
