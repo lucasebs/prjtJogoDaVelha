@@ -25,7 +25,7 @@ class Game:
         pygame.display.set_mode(resources.RESOLUTION)
 
         # sets the game surface
-        # surface.init()
+        surface.init()
 
         pygame.mixer.quit()
         pygame.quit()
