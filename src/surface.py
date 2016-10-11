@@ -1,6 +1,6 @@
 #! /user/bin/env python
 
-import sys, pygame, resources, time
+import sys, pygame, resources, time, utils, menu
 from time import strftime
 
 class Surface:
@@ -22,7 +22,7 @@ class Surface:
         self.screen = pygame.display.get_surface()
 
         # main menu
-        # self.menu = menu.Menu(self.screen)
+        self.menu = menu.Menu(self.screen)
 
     def cycle(self):
         """Initialize the main loop."""

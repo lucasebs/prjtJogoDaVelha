@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-import pygame, button, resources, utils, image
+import pygame, resources, utils
 
 
 class Menu:
@@ -28,8 +28,6 @@ class Menu:
 
             else:
                 self.set_background(resources.BACKGROUND)
-                self.play.show()
-                self.credits.show()
                 self.exit.show()
 
         def set_background(self, background):

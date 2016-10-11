@@ -15,7 +15,7 @@ GRAPHICS_PATH = "resources" + os.sep + "images" + os.sep
 BACKGROUND = GRAPHICS_PATH + "background.jpg"
 
 # Font
-FONT = "resouces" + os.sep + "fronts" + os.sep + "Quicksand-Light.otf"
+FONT = "resources" + os.sep + "fonts" + os.sep + "Quicksand-Light.otf"
 
 # display settings
 CAPTION = "prjtJogoDaVelha"
