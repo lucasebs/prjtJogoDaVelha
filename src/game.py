@@ -16,10 +16,10 @@ class Game:
         pygame.mixer.init()
 
         # set the name of the game
-        pygame.sisplay.set_caption(resources.CAPTION)
+        pygame.display.set_caption(resources.CAPTION)
 
         # set visibility of the mouse
-        pygame.mouse.ser_visible(resources.MOUSE_VISIBILITY)
+        pygame.mouse.set_visible(resources.MOUSE_VISIBILITY)
 
         # set a window or screen for display
         pygame.display.set_mode(resources.RESOLUTION, 0, 32)
