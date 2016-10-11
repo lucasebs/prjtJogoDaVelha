@@ -1,6 +1,6 @@
 #! /user/bin/env python
 
-import sys, pygame, resources, time
+import sys, pygame, resources, time, utils, menu
 from time import strftime
 
 class Surface:
