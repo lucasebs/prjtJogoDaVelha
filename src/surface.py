@@ -36,12 +36,10 @@ class Surface:
             self.catch_events()
             font_60 = pygame.font.Font(resources.FONT, 60)
 
-            timer = time.localtime(time.time())
-            time_render = font_60.render("%s:%s" % (timer[3], timer[4]), 1, (187,0,0))
-
             if self.is_running():
                 self.screen.blit(pygame.image.load(resources.BACKGROUND), (0, 0))
-                self.screen.blit(time_render, (760, 5))
+                self.screen.blit(pygame.image.load(resources.TABLE), (94, 136))
+
 
 
             else:
@@ -64,6 +62,7 @@ class Surface:
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 self.handle_mouse()
+                                
 
     def handle_mouse(self):
 
@@ -80,6 +79,13 @@ class Surface:
 
         elif self.menu.exit.onclick():
             self.quit()
+        
+        /* 
+            Escolher modo de jogo
+            Criar Cliente
+            Criar Servidor
+            Verificar Jogadas - IA
+        */
 
     def update_menu(self):
         self.menu = menu.Menu(self.screen)
