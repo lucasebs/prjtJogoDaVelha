@@ -97,12 +97,12 @@ def computador(Matriz):
     print jogadas
                  
     if len(jogadas[0]):
-        a = jogadas[0][randint(0, len(jogadas[0])-1)][0]
-        b = jogadas[0][randint(0, len(jogadas[0])-1)][1]
+        a = jogadas[0][random.randint(0, len(jogadas[0])-1)][0]
+        b = jogadas[0][random.randint(0, len(jogadas[0])-1)][1]
         Matriz[a][b] = 'x'
     if len(jogadas[1]):
-        a = jogadas[1][randint(0, len(jogadas[1])-1)][0]
-        b = jogadas[1][randint(0, len(jogadas[1])-1)][1]
+        a = jogadas[1][random.randint(0, len(jogadas[1])-1)][0]
+        b = jogadas[1][random.randint(0, len(jogadas[1])-1)][1]
         Matriz[a][b] = 'x'
     if len(jogadas[2]):
         a = jogadas[2][random.randint(0, len(jogadas[2])-1)][0]
