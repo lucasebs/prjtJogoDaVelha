@@ -5,7 +5,7 @@ host = ''
 port = 50001
 backlog = 5
 size = 1024
-MSG_SERVER = testejogo.get_Pos1()
+MSG_SERVER = jogo.get_Pos1()
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((host,port))
 s.listen(backlog)
