@@ -1,4 +1,4 @@
-import random
+import random, server
 
 
 Matriz = [["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]]
@@ -11,6 +11,7 @@ jogador_vencedor = ""
 empate = False
 
 
+
 def menu():
     print("Modo de Jogo")
     print("1 - Offline (Player vs PC)")
@@ -21,10 +22,11 @@ def menu():
     elif modoJogo == 2:
     	online()
 
+
 def imprime_Matriz(Matriz):
     for i in range(len(Matriz)):
         for j in range(len(Matriz[i])):
-            print(Matriz[i][j])
+            print(Matriz[i][j]),
         print ""
     return Matriz
 
@@ -73,10 +75,67 @@ def verifica_Vencedor(Matriz):
 	return empate
 
 
+def online():
+
+	fimDeJogo = False
+
+	print("Modo de Rede")
+	print("1 - Server")
+	print("2 - Client")
+	modoRede = int(raw_input())
+
+	def get_pos1():
+		return str(Posicao_jogada_linha_jogador1+Posicao_jogada_coluna_jogador1)
+	def get_pos2():
+		return str(Posicao_jogada_linha_jogador2+Posicao_jogada_coluna_jogador2)
+
+	def server():
+
+		def jogador1(Matriz):
+		    Posicao_jogada_linha_jogador1= int(input("Digite a posicao da linha que deseja jogar :"))
+		    Posicao_jogada_coluna_jogador1=int(input("Digite a posicao da coluna que deseja jogar :"))
+		    if Matriz[int(Posicao_jogada_linha_jogador1)][int(Posicao_jogada_coluna_jogador1)] == '-' :
+		        Matriz[int(Posicao_jogada_linha_jogador1)][int(Posicao_jogada_coluna_jogador1)] = "O"
+		    else:
+		        print("Essa posicao ja foi jogada!!")
+		        ja_jogados.append([Posicao_jogada_linha_jogador1,Posicao_jogada_coluna_jogador1])
+
+		jogador1(Matriz)
+
+	def client():
+
+		def jogador2(Matriz):
+		    Posicao_jogada_linha_jogador2= int(input("Digite a posicao da linha que deseja jogar :"))
+		    Posicao_jogada_coluna_jogador2=int(input("Digite a posicao da coluna que deseja jogar :"))
+		    if Matriz[int(Posicao_jogada_linha_jogador2)][int(Posicao_jogada_coluna_jogador2)] == '-' :
+		        Matriz[int(Posicao_jogada_linha_jogador2)][int(Posicao_jogada_coluna_jogador2)] = "x"
+		    else:
+		        print("Essa posicao ja foi jogada!!")
+		        ja_jogados.append([Posicao_jogada_linha_jogador2,Posicao_jogada_coluna_jogador2])
+
+		jogador2(Matriz)
+
+	while (fimDeJogo == False):
+		if modoRede == 1:
+			server()
+		else:
+			client()
+
+		if verifica_Vencedor(Matriz) == jogador2:
+			fimDeJogo = True
+			print ('Jogador 2 venceu o jogo!')
+		if verifica_Vencedor(Matriz) == jogador1:
+			fimDeJogo = True
+			print ('Jogador 1 venceu o jogo!')
+		if verifica_Vencedor(Matriz) == empate == True:
+			print ('O jogo empatou!')
+		imprime_Matriz(Matriz)
+
 
 def offline():
 
 	fimDeJogo = False
+
 
 	def copia_Matriz(Matriz):
 	    matrizCopia = []
@@ -169,5 +228,7 @@ def offline():
 		if verifica_Vencedor(Matriz) == empate == True:
 			print ('O jogo empatou!')
 		imprime_Matriz(Matriz)
+
+
 
 menu()
